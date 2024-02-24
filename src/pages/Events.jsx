@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import '../styles/Events.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Dashboard = () => {
   // Sample list of events (replace with actual data from your backend)
@@ -54,16 +56,24 @@ const Dashboard = () => {
       organizer: 'Learning Institute',
     }
   ];
+  function getRandomInt() {
+    // min and max included
+    return Math.floor(Math.random() * 100);
+  }
 
   return (
     <>
       <Navbar />
-      <div className="container mt-4">
-        <h2 className="mb-4">Upcoming Events</h2>
-        <div className="row">
+      <div className="eventSection1">
+        <h3 className='eventSection1-heading'>Events</h3>
+      </div>{ }
+      <div className="eventContainer">
+        <div className="event-row row">
+
           {events.map(event => (
-            <div className="col-md-6 d-flex" key={event.id}>
-              <div className="card flex-fill mb-4">
+            <div className="col-md-4 d-flex" key={event.id}>
+              <div className="card event flex-fill mb-4">
+                <div className='event-picture rounded-top'></div>
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{event.name}</h5>
                   <p className="card-text flex-grow-1">{event.description}</p>
@@ -72,12 +82,18 @@ const Dashboard = () => {
                     <li className="list-group-item"><strong>Location:</strong> {event.location}</li>
                     <li className="list-group-item"><strong>Organizer:</strong> {event.organizer}</li>
                   </ul>
-                  {/* Add button to sign up or learn more about the event */}
-                  <a href="#" className="btn btn-primary mt-3 align-self-start">Learn More</a>
+                  <div className="donationContainer">
+                    <input type="range" name="donation" id={event.id} disabled={true} value={36} min={1} max={100} />
+                    <div className='d-flex justify-content-between'>
+                      <span><strong>$36,000</strong> raised</span>
+                      <span className=''><strong>$100,000</strong> raised</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
+
         </div>
       </div>
       <Footer />
