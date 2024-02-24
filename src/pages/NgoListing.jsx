@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import '../styles/NgoListing.css'
 
 const NGO = () => {
   // Sample list of NGOs (replace with actual data from your backend)
@@ -73,12 +74,17 @@ const NGO = () => {
   return (
     <>
       <Navbar />
-      <div className="container mt-4">
-        <h2 className="mb-4">NGOs</h2>
-        <div className="row">
-          {NGOs.map(ngo => (
-            <div className="col-md-6 mb-4" key={ngo.id}>
+      <div className="eventSection1">
+        <h3 className='eventSection1-heading'>NGOs</h3>
+      </div>{ }
+      <div className="eventContainer">
+        <div className="event-row row">
+
+        {NGOs.map(ngo => (
+            <div className="col-md-4 mb-4" key={ngo.id}>
               <div className="card h-100">
+                
+              <div className='ngoListing-picture rounded-top'></div>
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{ngo.name}</h5>
                   <p className="card-text flex-grow-1">{ngo.mission}</p>
@@ -86,10 +92,12 @@ const NGO = () => {
                     <li className="list-group-item"><strong>Location:</strong> {ngo.location}</li>
                     <li className="list-group-item"><strong>Website:</strong> <a href={ngo.website} target="_blank" rel="noopener noreferrer">{ngo.website}</a></li>
                   </ul>
+                  <a href="#" className="btn custom-btn mt-3 align-self-start">Learn More</a>
                 </div>
               </div>
             </div>
           ))}
+
         </div>
       </div>
       <Footer />
