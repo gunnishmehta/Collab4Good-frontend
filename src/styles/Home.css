@@ -1,0 +1,112 @@
+.section1 {
+    background-image: url(/assets/landing-section1.png);
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+}
+
+.section1-btn {
+    background-color: #fbd559;
+    position: absolute;
+    bottom: 200px;
+    left: 250px;
+    border-radius: 10px;
+}
+.section1-btn:hover{
+    background-color: #76734b;
+}
+
+.section2 {
+    background-image: url(/assets/landing-section2.png);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+
+.section2-btn {
+    background-color: #fbd559;
+    position: absolute;
+    bottom: 80px;
+    right: 400px;
+    border-radius: 10px;
+}
+.section2-btn:hover{
+    background-color: #76734b;
+}
+
+.section3 {
+    background-image: url(/assets/landing-section3.png);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.section4 {
+    background-image: url(/assets/landing-section4.png);
+    width: 100vw;
+    height: 60vh;
+    position: relative;
+}
+
+.section5 {
+    background-image: url(/assets/landing-section5.png);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.section5-btn {
+    background-color: #fbd559;
+    position: absolute;
+    bottom: 300px;
+    left: 400px;
+    border-radius: 10px;
+}
+.section5-btn:hover{
+    background-color: #76734b;
+}
+
+.section6{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section6-1 {
+    background-image: url(/assets/landing-section6-1.png);
+    border-radius: 40px;
+    width: 30vw;
+    height: 60vh;
+    position: relative;
+    margin: 10px;
+}
+
+
+.section6-2 {
+    background-image: url(/assets/landing-section6-2.png);
+    border-radius: 40px;
+    width: 30vw;
+    height: 60vh;
+    position: relative;
+    margin: 10px;
+}
+
+.section6-btn {
+    background-color: #fbd559;
+    position: absolute;
+    bottom: 50%;
+    left: 30%;
+    border-radius: 10px;
+}
+.section6-btn:hover{
+    background-color: #76734b;
+}
+
+.section7 {
+    margin-top: 150px;
+    background-image: url(/assets/landing-section7.png);
+    border-radius: 40px;
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+}
