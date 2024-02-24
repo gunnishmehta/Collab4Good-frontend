@@ -1,0 +1,59 @@
+.ngosection1{
+    background-image: url(/assets/eventsPage/event6.png);
+    background-size: cover;
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+}
+
+.ngoSection1-heading{
+    position: absolute;
+    left:50%;
+    top:50%;
+}
+.container {
+    margin-top: 20px;
+  }
+  
+  .ngo-section {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .ngo-info {
+    flex: 1;
+    background-color: #ffffcc;
+    border-radius: 50px;
+    padding: 20px;
+    margin-right: 20px;
+  }
+  
+  .ngo-heading {
+    margin-bottom: 10px;
+  }
+  
+  .ngo-details {
+    margin-bottom: 20px;
+  }
+  
+  .ngo-details-row {
+    margin-bottom: 5px;
+  }
+  
+  .ngo-description {
+    flex: 2;
+  }
+  
+  .top-donors {
+    margin-top: 20px;
+  }
+  
+  .top-donors ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .top-donors ul li {
+    margin-bottom: 5px;
+  }
+  
