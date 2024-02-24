@@ -1,0 +1,36 @@
+/* Navbar.css */
+.navbar {
+    background-color: #00715D;
+    color: #c9dbd7;
+}
+
+.navbar-nav .nav-link {
+    color: #c9dbd7;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fbd55a;
+}
+
+.navbar-brand {
+    color: #c9dbd7;
+}
+
+.navbar-toggler-icon {
+    color: #c9dbd7;
+}
+
+.buttons .btn {
+    background-color: goldenrod; /* Set the background color to golden */
+    color: #333; /* Set the text color to a dark theme */
+}
+
+.buttons .btn:hover {
+    background-color: #fbd55a; /* Change background color on hover */
+    color: #333; /* Set the text color to a dark theme */
+}
+
+.buttons .register-button {
+    background-color: goldenrod; /* Set the background color to golden */
+    color: #333; /* Set the text color to a dark theme */
+}

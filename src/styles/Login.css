@@ -1,0 +1,22 @@
+/* LoginSection.css */
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #ffffff;
+    background-image: url('../assets/register.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+    background-color: #282724;
+}
+
+.login-container .text-white {
+    color: #fff55a; /* Set the text color */
+}
+
+.btn-login,
+.btn-register {
+    background-color: goldenrod;
+    color: #333; /* Set the text color to a dark theme */
+}

@@ -1,0 +1,18 @@
+/* Registration.css */
+.registration-container {
+    background-color: #282724;
+}
+
+.registration-container .text-white {
+    color: #fff55a; /* Set the text color */
+}
+
+.registration-container .btn-register {
+    background-color: goldenrod; /* Set the background color to golden */
+    color: #333; /* Set the text color to a dark theme */
+}
+
+.registration-container .btn-register:hover {
+    background-color: #fbd55a; /* Change background color on hover */
+    color: #333; /* Set the text color to a dark theme */
+}
