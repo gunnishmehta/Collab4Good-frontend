@@ -11,7 +11,7 @@ const NgoRegister = () => {
     missionStatement: "",
     website: "",
     socialMediaLinks: "",
-    coverImage: null
+    coverImage: null,
   });
 
   const handleSubmit = async (event) => {
@@ -29,7 +29,7 @@ const NgoRegister = () => {
         missionStatement: "",
         website: "",
         socialMediaLinks: "",
-        coverImage: null
+        coverImage: null,
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -40,7 +40,7 @@ const NgoRegister = () => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -147,6 +147,9 @@ const NgoRegister = () => {
           onChange={handleChange}
         />
       </div>
+      <button className="my-2 mx-auto btn btn-dark" type="submit">
+        Register
+      </button>
     </form>
   );
 };

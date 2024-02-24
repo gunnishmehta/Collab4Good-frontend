@@ -33,59 +33,78 @@ const IndividualRegister = () => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   return (
-    <>
-    <Navbar />
-    <div className="container my-3 py-3">
-        <h1 className="text-center">Register</h1>
-        <hr />
-        <div className="row justify-content-center">
-            <div className="col-md-6">
-                <form onSubmit={handleSubmit} className="registration-form">
-                    <div className="mb-3">
-                        <label htmlFor="userType" className="form-label">Select the type of User</label>
-                        <select
-                            value={activeForm}
-                            onChange={handleFormChange}
-                            className="form-select"
-                        >
-                            {forms.map((form) => (
-                                <option key={form} value={form}>
-                                    {form}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                    <div>
-                        {activeForm === "individual" && <IndividualRegister />}
-                        {activeForm === "corporate" && <CorporateRegister />}
-                        {activeForm === "ngo" && <NgoRegister />}
-                    </div>
-                    {error && <p className="text-danger">{error}</p>}
-                    <div className="my-3 text-center">
-                        <p>
-                            Already have an account?{" "}
-                            <Link to="/login" className="text-decoration-underline text-info">
-                                Login
-                            </Link>
-                        </p>
-                    </div>
-                    <div className="text-center">
-                        <button className="btn btn-primary" type="submit">
-                            Register
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <Footer />
-</>
+    <form onSubmit={handleSubmit}>
+      <div className="my-3">
+        <label for="display-4">Enter Your Name</label>
+        <input
+          type="text"
+          name="fullName"
+          className="form-control"
+          placeholder="Full Name"
+          value={formData.fullName}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="my-3">
+        <label for="display-4">Email address</label>
+        <input
+          type="email"
+          name="email"
+          className="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="my-3">
+        <label for="display-4">Enter Password</label>
+        <input
+          type="password"
+          name="password"
+          className="form-control"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="my-3">
+        <label for="display-4">Confirm Password</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          className="form-control"
+          placeholder="Confirm Password"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          required
+        />
+      </div>
 
+      <div className="my-3">
+        <label for="display-4">Location</label>
+        <input
+          type="text"
+          name="location"
+          className="form-control"
+          placeholder="Location"
+          value={formData.location}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <button className="my-2 mx-auto btn btn-dark" type="submit">
+        Register
+      </button>
+    </form>
   );
 };
 

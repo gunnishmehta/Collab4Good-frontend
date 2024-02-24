@@ -9,7 +9,7 @@ const CorporateRegister = () => {
     confirmPassword: "",
     website: "",
     socialMediaLinks: "",
-    coverImage: null
+    coverImage: null,
   });
 
   const handleSubmit = async (event) => {
@@ -26,7 +26,7 @@ const CorporateRegister = () => {
         csrInterests: "",
         website: "",
         socialMediaLinks: "",
-        coverImage: null
+        coverImage: null,
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -37,102 +37,104 @@ const CorporateRegister = () => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div class="my-3">
+      <div className="my-3">
         <label for="display-4">Enter Company Name</label>
         <input
           type="text"
           name="companyName"
-          class="form-control"
+          className="form-control"
           placeholder="Company Name"
           value={formData.companyName}
           onChange={handleChange}
           required
         />
       </div>
-      
-      <div class="my-3">
+
+      <div className="my-3">
         <label for="display-4">Email Address</label>
         <input
           type="email"
           name="email"
-          class="form-control"
+          className="form-control"
           placeholder="Email Address"
           value={formData.email}
           onChange={handleChange}
           required
         />
       </div>
-      
-      <div class="my-3">
+
+      <div className="my-3">
         <label for="display-4">Password</label>
         <input
           type="password"
           name="password"
-          class="form-control"
+          className="form-control"
           placeholder="Password"
           value={formData.password}
           onChange={handleChange}
           required
         />
       </div>
-      
-      <div class="my-3">
+
+      <div className="my-3">
         <label for="display-4">Confirm Password</label>
         <input
           type="password"
           name="confirmPassword"
-          class="form-control"
+          className="form-control"
           placeholder="Confirm Password"
           value={formData.confirmPassword}
           onChange={handleChange}
           required
         />
       </div>
-           
-      <div class="my-3">
+
+      <div className="my-3">
         <label for="display-4">Website</label>
         <input
           type="text"
           name="website"
-          class="form-control"
+          className="form-control"
           placeholder="Website"
           value={formData.website}
           onChange={handleChange}
           required
         />
       </div>
-            
-      <div class="my-3">
+
+      <div className="my-3">
         <label for="display-4">Social Media Links</label>
         <input
           type="text"
           name="socialMediaLinks"
-          class="form-control"
+          className="form-control"
           placeholder="Social Media Links"
           value={formData.socialMediaLinks}
           onChange={handleChange}
           required
         />
       </div>
-            
-      <div class="my-3">
+
+      <div className="my-3">
         <label for="display-4">coverImage</label>
         <input
           type="file"
           name="coverImage"
-          class="form-control"
+          className="form-control"
           value={formData.coverImage}
           onChange={handleChange}
           required
         />
       </div>
-      
+      <button className="my-2 mx-auto btn btn-dark" type="submit">
+        Register
+      </button>
     </form>
   );
 };
