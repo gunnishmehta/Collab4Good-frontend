@@ -1,12 +1,54 @@
-.eventsect1{
-    background-image: url(/assets/eventsPage/event6.png);
-    background-size: cover;
-    width: 100vw;
-    height: 50vh;
-    position: relative;
+.eventsect1 {
+  background-image: url(/assets/eventsPage/event6.png);
+  background-size: cover;
+  width: 100vw;
+  height: 50vh;
+  position: relative;
 }
 
-.container {
+.eventSection2 {
+  justify-content: center;
+  margin: 10% 20%;
+}
+
+.customEventContainer {
+  width: 70%;
+}
+
+.customEventPicture {
+  background-image: url(/assets/customEvent/event-picture.png);
+  background-size: cover;
+  border-radius: 20px;
+  height: 40vh;
+  margin-bottom: 30px;
+}
+
+.customEventDonate{
+  background-image: url(/assets/customEvent/donate-picture.png);
+  background-size: cover;
+  height: 15vh;
+  width: 100%;
+  position: relative;
+}
+
+.customEventDonate-btn{
+  background-color: #fbd559;
+  position: absolute;
+  bottom: 40%;
+  right: 20%;
+}
+
+.summary-list{
+  background-color: #faf4e8;
+}
+
+.customEventCreated{
+  height: 200px;
+  width: 30%;
+  margin: 30px;
+}
+
+/* .container {
     margin-top: 20px;
   }
   
@@ -59,4 +101,4 @@
 
 .joinbtn:hover{
   background-color: #76734b;
-}
+} */
