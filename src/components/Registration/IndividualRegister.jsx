@@ -38,74 +38,54 @@ const IndividualRegister = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>  
-      <div class="my-3">
-        <label for="display-4">Enter Your Name</label>
-        <input
-          type="text"
-          name="fullName"
-          class="form-control"
-          placeholder="Full Name"
-          value={formData.fullName}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div class="my-3">
-        <label for="display-4">Email address</label>
-        <input
-          type="email"
-          name="email"
-          class="form-control"
-          id="floatingInput"
-          placeholder="name@example.com"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div class="my-3">
-        <label for="display-4">Enter Password</label>
-        <input
-          type="password"
-          name="password"
-          class="form-control"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div class="my-3">
-        <label for="display-4">Confirm Password</label>
-        <input
-          type="password"
-          name="confirmPassword"
-          class="form-control"
-          placeholder="Confirm Password"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      
-      <div class="my-3">
-        <label for="display-4">Location</label>
-        <input
-          type="text"
-          name="location"
-          class="form-control"
-          placeholder="Location"
-          value={formData.location}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      {/* <input type="text" name="location" value={formData.location} onChange={handleChange} placeholder="Location" /> */}
-      {/* <input type="text" name="interests" value={formData.interests} onChange={handleChange} placeholder="Interests/Skills" />
-      <input type="tel" name="contactNumber" value={formData.contactNumber} onChange={handleChange} placeholder="Contact Number" /> */}
-      {/* <button type="submit">Submit</button> */}
-    </form>
+    <>
+    <Navbar />
+    <div className="container my-3 py-3">
+        <h1 className="text-center">Register</h1>
+        <hr />
+        <div className="row justify-content-center">
+            <div className="col-md-6">
+                <form onSubmit={handleSubmit} className="registration-form">
+                    <div className="mb-3">
+                        <label htmlFor="userType" className="form-label">Select the type of User</label>
+                        <select
+                            value={activeForm}
+                            onChange={handleFormChange}
+                            className="form-select"
+                        >
+                            {forms.map((form) => (
+                                <option key={form} value={form}>
+                                    {form}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div>
+                        {activeForm === "individual" && <IndividualRegister />}
+                        {activeForm === "corporate" && <CorporateRegister />}
+                        {activeForm === "ngo" && <NgoRegister />}
+                    </div>
+                    {error && <p className="text-danger">{error}</p>}
+                    <div className="my-3 text-center">
+                        <p>
+                            Already have an account?{" "}
+                            <Link to="/login" className="text-decoration-underline text-info">
+                                Login
+                            </Link>
+                        </p>
+                    </div>
+                    <div className="text-center">
+                        <button className="btn btn-primary" type="submit">
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <Footer />
+</>
+
   );
 };
 

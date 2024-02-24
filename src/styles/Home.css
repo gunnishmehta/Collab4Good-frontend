@@ -1,5 +1,5 @@
 .section1 {
-    background-image: url(/assets/landing-section1.png);
+    background-image: url(/assets/landingPage/landing-section1.png);
     width: 100vw;
     height: 90vh;
     position: relative;
@@ -17,7 +17,7 @@
 }
 
 .section2 {
-    background-image: url(/assets/landing-section2.png);
+    background-image: url(/assets/landingPage/landing-section2.png);
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -36,21 +36,21 @@
 }
 
 .section3 {
-    background-image: url(/assets/landing-section3.png);
+    background-image: url(/assets/landingPage/landing-section3.png);
     width: 100vw;
     height: 100vh;
     position: relative;
 }
 
 .section4 {
-    background-image: url(/assets/landing-section4.png);
+    background-image: url(/assets/landingPage/landing-section4.png);
     width: 100vw;
     height: 60vh;
     position: relative;
 }
 
 .section5 {
-    background-image: url(/assets/landing-section5.png);
+    background-image: url(/assets/landingPage/landing-section5.png);
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -73,7 +73,7 @@
 }
 
 .section6-1 {
-    background-image: url(/assets/landing-section6-1.png);
+    background-image: url(/assets/landingPage/landing-section6-1.png);
     border-radius: 40px;
     width: 30vw;
     height: 60vh;
@@ -83,7 +83,7 @@
 
 
 .section6-2 {
-    background-image: url(/assets/landing-section6-2.png);
+    background-image: url(/assets/landingPage/landing-section6-2.png);
     border-radius: 40px;
     width: 30vw;
     height: 60vh;
@@ -104,7 +104,7 @@
 
 .section7 {
     margin-top: 150px;
-    background-image: url(/assets/landing-section7.png);
+    background-image: url(/assets/landingPage/landing-section7.png);
     border-radius: 40px;
     width: 100vw;
     height: 90vh;
