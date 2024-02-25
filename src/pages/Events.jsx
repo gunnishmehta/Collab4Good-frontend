@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import '../styles/Events.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Events = () => {
   const events = [

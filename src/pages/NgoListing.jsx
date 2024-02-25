@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/NgoListing.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const NGO = () => {
   const NGOs = [
