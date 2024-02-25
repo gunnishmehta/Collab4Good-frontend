@@ -27,6 +27,7 @@ const LoginSection = () => {
     const forms = ["individual", "corporate", "ngo"];
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(server);
 
         try {
             const response = await axios.post(`${server}/auth/login`, {
