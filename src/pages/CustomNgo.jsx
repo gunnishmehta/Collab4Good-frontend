@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/Customngo.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 const CustomNGO = () => {
   const ngo = {
@@ -99,7 +100,7 @@ const CustomNGO = () => {
                         </span>
                       </div>
                     </div>
-                  <Link to="/customngo" className="btn btn-lg custom-btn">Discover more</Link>
+                  <Link to="/customevent" className="btn btn-lg custom-btn">Discover more</Link>
                   </div>
                 </div>
               </div>
