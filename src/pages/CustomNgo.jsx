@@ -99,7 +99,7 @@ const CustomNGO = () => {
                         </span>
                       </div>
                     </div>
-                  <a href="/customevent" className="btn custom-btn mt-3 align-self-start">Learn More</a>
+                  <Link to="/customngo" className="btn btn-lg custom-btn">Discover more</Link>
                   </div>
                 </div>
               </div>
