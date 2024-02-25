@@ -114,7 +114,7 @@ const Events = () => {
                       <span className=''><strong>$100,000</strong> raised</span>
                     </div>
                   </div>
-                  <Link to="/customngo" className="btn btn-lg section2-btn">Discover more</Link>
+                  <Link to="/customngo" className="btn btn-lg custom-btn">Discover more</Link>
                 </div>
               </div>
             </div>
