@@ -9,8 +9,6 @@ import CorporateRegister from "../components/Registration/CorporateRegister.jsx"
 import NgoRegister from "../components/Registration/NgoRegister.jsx";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const [activeForm, setActiveForm] = useState("individual");
@@ -21,23 +19,7 @@ const Register = () => {
 
   const forms = ["individual", "corporate", "ngo"];
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await axios.post(`${server}/auth/login`, {
-        email,
-        password,
-      });
-      localStorage.setItem("email", email);
-      // Handle successful login response
-      console.log(response.data);
-    } catch (error) {
-      // Handle error
-      setError("Failed to log in. Please check your credentials.");
-      console.error("Login error:", error);
-    }
-  };
+  
 
   return (
     <>

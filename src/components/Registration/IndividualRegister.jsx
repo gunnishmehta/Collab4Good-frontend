@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {server} from '../../main'
 
 const IndividualRegister = () => {
   const [formData, setFormData] = useState({
@@ -8,14 +9,12 @@ const IndividualRegister = () => {
     password: "",
     confirmPassword: "",
     location: "",
-    // interests: "",
-    // contactNumber: ""
   });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("/api/signup/individual", formData);
+      const response = await axios.post(`${server}/auth/register/individual`, formData);
       console.log(response.data);
       setFormData({
         fullName: "",

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {server} from '../../main'
 
 const CorporateRegister = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +16,7 @@ const CorporateRegister = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("/api/signup/corporate", formData);
+      const response = await axios.post(`${server}/auth/register/corporate`, formData);
       console.log(response.data);
 
       setFormData({
