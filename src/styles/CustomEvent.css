@@ -31,11 +31,10 @@
   position: relative;
 }
 
-.customEventDonate-btn{
-  background-color: #fbd559;
+.donationButton{
   position: absolute;
-  bottom: 40%;
-  right: 20%;
+  bottom: 30%;
+  right: 10%;
 }
 
 .summary-list{

@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/CustomEvent.css";
 import { Chart } from 'react-google-charts'
+import RazorpayButton from "./RazorpayButton";
+import Razorpay from "./Razorpay";
 
 const CustomEvent = () => {
   const data = [
@@ -47,7 +49,9 @@ const CustomEvent = () => {
               structures, to generate Lorem Ipsum which looks reasonable.</p>
           </div>
           <div className="customEventDonate">
-            <button type="button" className="btn btn-lg customEventDonate-btn">Donate</button>
+            <div className="donationButton">
+              <RazorpayButton />
+            </div>
           </div>
           <div className="summary">
             <p>Lorem Ipsum has been the Industry's standard dummy text ever since the 1500s, when an unknown
