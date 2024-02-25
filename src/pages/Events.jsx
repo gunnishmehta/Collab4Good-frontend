@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/Events.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios'
 
-const Dashboard = () => {
-  // Sample list of events (replace with actual data from your backend)
-  const events = [
+const Events = () => {
+  const [events, setEvents] = useState([
     {
       id: 1,
       name: 'Charity Fundraiser',
@@ -55,12 +55,18 @@ const Dashboard = () => {
       location: 'University Auditorium',
       organizer: 'Learning Institute',
     }
-  ];
-  function getRandomInt() {
-    // min and max included
-    return Math.floor(Math.random() * 100);
-  }
-
+  ]);
+  useEffect(()=>{
+    async function getData(){
+      try {
+        const response = await axios.get(`${server}/api/events/all`)
+        setEvents(response.data.events);
+      } catch (error) {
+        console.log('Error in fetching events: ', error.message);
+      }
+    }
+    getData();
+  })
   return (
     <>
       <Navbar />
@@ -101,4 +107,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Events;
