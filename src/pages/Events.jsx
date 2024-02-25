@@ -6,13 +6,79 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 const Events = () => {
-  const [events, setEvents] = useState([]);
+  const events = [
+    {
+      id: "1",
+      title: "Fundraiser Gala",
+      description: "Annual gala event to raise funds for various projects.",
+      date: "2024-03-15T00:00:00.000Z",
+      location: "Grand Ballroom, XYZ Hotel",
+      organizer: "Charity Foundation",
+      ngo: "NGO_ID_1",
+      donationTotal: 5000,
+      donationGoal: 10000,
+      donors: ["Donor_ID_1", "Donor_ID_2", "Donor_ID_3"]
+    },
+    {
+      id: "2",
+      title: "Community Cleanup Drive",
+      description: "Volunteer event to clean up local parks and streets.",
+      date: "2024-04-22T00:00:00.000Z",
+      location: "City Park",
+      organizer: "Green Earth Initiative",
+      ngo: "NGO_ID_2",
+      donationTotal: 2000,
+      donationGoal: 3000,
+      donors: ["Donor_ID_4", "Donor_ID_5"]
+    },
+    {
+      id: "3",
+      title: "Food Drive",
+      description: "Collecting non-perishable food items for the homeless shelter.",
+      date: "2024-05-10T00:00:00.000Z",
+      location: "Local Supermarket",
+      organizer: "Community Food Bank",
+      ngo: "NGO_ID_3",
+      donationTotal: 1500,
+      donationGoal: 2000,
+      donors: ["Donor_ID_6", "Donor_ID_7"]
+    },
+    {
+      id: "4",
+      title: "Blood Donation Camp",
+      description: "Donate blood to save lives!",
+      date: "2024-06-20T00:00:00.000Z",
+      location: "Community Center",
+      organizer: "Red Cross Society",
+      ngo: "NGO_ID_4",
+      donationTotal: 300,
+      donationGoal: 500,
+      donors: ["Donor_ID_8"]
+    },
+    {
+      id: "5",
+      title: "Educational Workshop",
+      description: "Workshop to provide free tutoring for underprivileged students.",
+      date: "2024-07-05T00:00:00.000Z",
+      location: "Local Library",
+      organizer: "Education For All Foundation",
+      ngo: "NGO_ID_5",
+      donationTotal: 800,
+      donationGoal: 1000,
+      donors: ["Donor_ID_9", "Donor_ID_10"]
+    }
+  ];
+  
+  
+  const getBackgroundImageUrl = (index) => {
+    return `/assets/eventsPage/event${index % 5 + 1}.png`; // Assuming there are 5 different images
+  };
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await axios.get('/api/events/all'); // Adjust the endpoint URL as needed
-        setEvents(response.data.events); // Assuming the response.data is an array of event objects
+        // events = response.data.events // Assuming the response.data is an array of event objects
       } catch (error) {
         console.log('Error in fetching events: ', error.message);
       }
@@ -31,7 +97,7 @@ const Events = () => {
           {Array.isArray(events)? (events.map(event => (
             <div className="col-md-4 d-flex" key={event.id}>
               <div className="card event flex-fill mb-4">
-                <div className='event-picture rounded-top'></div>
+                <div className='event-picture rounded-top' style={{ backgroundImage: `url(${getBackgroundImageUrl(event.id)})` }}></div>
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{event.name}</h5>
                   <p className="card-text flex-grow-1">{event.description}</p>
@@ -47,6 +113,7 @@ const Events = () => {
                       <span className=''><strong>$100,000</strong> raised</span>
                     </div>
                   </div>
+                  <a href="/customevent" className="btn custom-btn mt-3 align-self-start">Learn More</a>
                 </div>
               </div>
             </div>

@@ -16,23 +16,13 @@ const CustomNGO = () => {
     topDonors: ["John Doe", "Jane Doe", "Bob Smith"],
     events: [
       {
-        id: 1,
-        name: "Charity Fundraiser",
-        date: "February 20, 2024",
-        description:
-          "Join us for a charity fundraiser ngo to support children in need.",
-        location: "Community Center",
-        organizer: "Charity Foundation",
-      },
-      {
-        id: 2,
-        name: "Environmental Cleanup Drive",
-        date: "March 10, 2024",
-        description:
-          "Help us clean up the environment by participating in our cleanup drive.",
-        location: "City Park",
-        organizer: "Green Earth Organization",
-      },
+    name: "Food Drive",
+    date: "May 10, 2024",
+    organizer: "Community Food Bank",
+    description: "Collecting non-perishable food items for the homeless shelter.",
+    location: "Local Supermarket",
+    topDonors: ["Donor_ID_6", "Donor_ID_7"]
+  }
     ],
   };
 
@@ -69,9 +59,9 @@ const CustomNGO = () => {
               <strong>Location:</strong> {ngo.location}
             </p>
             {ngo.events.map((event) => (
-              <div className="col-md-4 d-flex" key={event.id}>
+              <div className="col-md-6 d-flex" key={event.id}>
                 <div className="card event flex-fill mb-4">
-                  <div className="event-picture rounded-top"></div>
+                  <div className="ngo-picture rounded-top"></div>
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{event.name}</h5>{" "}
                     {/* Changed ngo.event.name to event.name */}
@@ -109,6 +99,7 @@ const CustomNGO = () => {
                         </span>
                       </div>
                     </div>
+                  <a href="/customevent" className="btn custom-btn mt-3 align-self-start">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -126,11 +117,7 @@ const CustomNGO = () => {
                   </li>
                 ))}
               </ul>
-              <div className="ngo-buttons">
-                <button className="btn btn-primary btn-lg mr-2">Join</button>
-                {"                  "}
-                <button className="btn btn-success btn-lg">Donate</button>
-              </div>
+              
             </div>
           </div>
         </div>

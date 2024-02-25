@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import {server} from '../../main'
+import {useNavigate} from 'react-router-dom'
 
 const NgoRegister = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     userType: "ngo",
     organizationName: "",
@@ -23,7 +25,7 @@ const NgoRegister = () => {
       // Make a POST request to your backend server with the form data
       const response = await axios.post(`${server}/auth/register/ngo`, formData);
       console.log(response.data); // Assuming your backend returns a success message
-      navigate("/");
+      navigate('/events')
       // Reset form fields after submission
       setFormData({
         organizationName: "",

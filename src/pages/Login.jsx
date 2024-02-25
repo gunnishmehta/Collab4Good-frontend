@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import '../styles/Login.css';
-
+import {useNavigate} from 'react-router-dom'
 import { server } from '../main'
 import axios from 'axios';
 
 const LoginSection = () => {
-
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -35,7 +35,9 @@ const LoginSection = () => {
                 password: formData.password
             });
             localStorage.setItem("email", formData.email);
+            navigate('/events')
             // Handle successful login response
+            
             console.log(response.data);
         } catch (error) {
             // Handle error

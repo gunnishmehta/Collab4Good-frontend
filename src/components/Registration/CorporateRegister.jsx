@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import {useNavigate} from 'react-router-dom'
 import axios from "axios";
 import {server} from '../../main'
 
 const CorporateRegister = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     userType: "corporate",
     companyName: "",
@@ -19,6 +21,7 @@ const CorporateRegister = () => {
     try {
       const response = await axios.post(`${server}/auth/register/corporate`, formData);
       console.log(response.data);
+      navigate('/events')
 
       setFormData({
         companyName: "",

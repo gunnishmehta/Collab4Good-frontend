@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import {server} from '../../main'
+import {useNavigate} from 'react-router-dom'
 
 
 const IndividualRegister = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     userType: "individual",
     fullName: "",
@@ -18,6 +20,7 @@ const IndividualRegister = () => {
     try {
       const response = await axios.post(`${server}/auth/register/individual`, formData);
       console.log(response.data);
+      navigate('/events')
       setFormData({
         fullName: "",
         email: "",
