@@ -3,80 +3,32 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/Events.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios'
+import axios from 'axios';
 
 const Events = () => {
-  const [events, setEvents] = useState([
-    {
-      id: 1,
-      name: 'Charity Fundraiser',
-      date: 'February 20, 2024',
-      description: 'Join us for a charity fundraiser event to support children in need.',
-      location: 'Community Center',
-      organizer: 'Charity Foundation',
-    },
-    {
-      id: 2,
-      name: 'Environmental Cleanup Drive',
-      date: 'March 10, 2024',
-      description: 'Help us clean up the environment by participating in our cleanup drive.',
-      location: 'City Park',
-      organizer: 'Green Earth Organization',
-    },
-    {
-      id: 3,
-      name: 'Technology Conference',
-      date: 'April 5, 2024',
-      description: 'Attend our technology conference to learn about the latest innovations.',
-      location: 'Convention Center',
-      organizer: 'Tech Innovations Inc.',
-    },
-    {
-      id: 4,
-      name: 'Art Exhibition',
-      date: 'May 15, 2024',
-      description: 'Explore beautiful artworks created by talented artists from around the world.',
-      location: 'Art Gallery',
-      organizer: 'Creative Arts Society',
-    },
-    {
-      id: 5,
-      name: 'Music Festival',
-      date: 'June 30, 2024',
-      description: 'Enjoy live music performances by popular artists in our annual music festival.',
-      location: 'Outdoor Arena',
-      organizer: 'Music Events LLC',
-    },
-    {
-      id: 6,
-      name: 'Educational Seminar',
-      date: 'July 20, 2024',
-      description: 'Join our educational seminar to enhance your knowledge and skills.',
-      location: 'University Auditorium',
-      organizer: 'Learning Institute',
-    }
-  ]);
-  useEffect(()=>{
-    async function getData(){
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
       try {
-        const response = await axios.get(`${server}/api/events/all`)
-        setEvents(response.data.events);
+        const response = await axios.get('/api/events/all'); // Adjust the endpoint URL as needed
+        setEvents(response.data.events); // Assuming the response.data is an array of event objects
       } catch (error) {
         console.log('Error in fetching events: ', error.message);
       }
     }
-    getData();
-  })
+    fetchData();
+  }, []); // Empty dependency array to ensure the effect runs only once on mount
+
   return (
     <>
       <Navbar />
       <div className="eventSection1">
         <h3 className='eventSection1-heading'>Events</h3>
-      </div>{ }
+      </div>
       <div className="eventContainer">
         <div className="event-row row">
-
-          {events.map(event => (
+          {Array.isArray(events)? (events.map(event => (
             <div className="col-md-4 d-flex" key={event.id}>
               <div className="card event flex-fill mb-4">
                 <div className='event-picture rounded-top'></div>
@@ -98,8 +50,7 @@ const Events = () => {
                 </div>
               </div>
             </div>
-          ))}
-
+          ))):(<p>Loading...</p>)}
         </div>
       </div>
       <Footer />

@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import "../styles/CustomEvent.css";
 import { Chart } from 'react-google-charts'
 import RazorpayButton from "./RazorpayButton";
-import Razorpay from "./Razorpay";
 
 const CustomEvent = () => {
   const data = [

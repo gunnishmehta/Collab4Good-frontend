@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import {server} from '../../main'
 
+
 const IndividualRegister = () => {
   const [formData, setFormData] = useState({
     fullName: "",

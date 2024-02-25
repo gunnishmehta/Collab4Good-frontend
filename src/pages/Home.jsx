@@ -4,28 +4,29 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import '../styles/Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <div className="section1">
-        <button type="button" className="btn btn-lg section1-btn">Discover more</button>
+      <Link to="/events" className="btn btn-lg section1-btn">Discover more</Link>
       </div>
       <div className="section2">
-        <button type="button" className="btn btn-lg section2-btn">Discover more</button>
+      <Link to="/events" className="btn btn-lg section2-btn">Discover more</Link>
       </div>
       <div className="section3"></div>
       <div className="section4"></div>
       <div className="section5">
-        <button type="button" className="btn btn-lg section5-btn">Discover more</button>
+      <Link to="/ngoListing" className="btn btn-lg section5-btn">Discover more</Link>
       </div>
       <div className="section6">
         <div className="section6-1">
-          <button type="button" className="btn btn-lg section6-btn">Discover more</button>
+        <Link to="/ngoListing" className="btn btn-lg section6-btn">Discover more</Link>
         </div>
         <div className="section6-2">
-          <button type="button" className="btn btn-lg section6-btn">Discover more</button>
+        <Link to="/events" className="btn btn-lg section6-btn">Discover more</Link>
         </div>
       </div>
       <div className="section7"></div>

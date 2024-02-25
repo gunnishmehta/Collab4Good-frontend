@@ -13,6 +13,7 @@ const NgoRegister = () => {
     website: "",
     socialMediaLinks: "",
     coverImage: null,
+    razorpayid: "",
   });
 
   const handleSubmit = async (event) => {
@@ -21,6 +22,7 @@ const NgoRegister = () => {
       // Make a POST request to your backend server with the form data
       const response = await axios.post(`${server}/auth/register/ngo`, formData);
       console.log(response.data); // Assuming your backend returns a success message
+      navigate("/");
       // Reset form fields after submission
       setFormData({
         organizationName: "",
@@ -31,6 +33,7 @@ const NgoRegister = () => {
         website: "",
         socialMediaLinks: "",
         coverImage: null,
+        razorpayid: "",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -148,6 +151,17 @@ const NgoRegister = () => {
           onChange={handleChange}
         />
       </div>
+      <div className="my-3">
+      <label htmlFor="coverImage">Razor Pay ID</label>
+      <input
+          type="text"
+          name="razorpayid"
+          className="form-control"
+          placeholder="Razor Pay ID"
+          value={formData.razorpayid}
+          onChange={handleChange}
+        />
+        </div>
       <button className="my-2 mx-auto btn btn-dark" type="submit">
         Register
       </button>
