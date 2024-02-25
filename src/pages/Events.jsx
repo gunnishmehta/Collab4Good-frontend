@@ -113,7 +113,7 @@ const Events = () => {
                       <span className=''><strong>$100,000</strong> raised</span>
                     </div>
                   </div>
-                  <a href="/customevent" className="btn custom-btn mt-3 align-self-start">Learn More</a>
+                  <Link to="/customngo" className="btn btn-lg section2-btn">Discover more</Link>
                 </div>
               </div>
             </div>

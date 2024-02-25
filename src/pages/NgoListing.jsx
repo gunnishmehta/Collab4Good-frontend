@@ -93,7 +93,7 @@ const NGO = () => {
                     <li className="list-group-item"><strong>Location:</strong> {ngo.location}</li>
                     <li className="list-group-item"><strong>Email:</strong> {ngo.email}</li>
                   </ul>
-                  <a href="/customngo" className="btn custom-btn mt-3 align-self-start">Learn More</a>
+                  <Link to="/customngo" className="btn btn-lg section2-btn">Discover more</Link>
                 </div>
               </div>
             </div>
