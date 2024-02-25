@@ -5,6 +5,7 @@ import {server} from '../../main'
 
 const IndividualRegister = () => {
   const [formData, setFormData] = useState({
+    userType: "individual",
     fullName: "",
     email: "",
     password: "",

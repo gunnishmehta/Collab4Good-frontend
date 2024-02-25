@@ -4,6 +4,7 @@ import {server} from '../../main'
 
 const CorporateRegister = () => {
   const [formData, setFormData] = useState({
+    userType: "corporate",
     companyName: "",
     email: "",
     password: "",

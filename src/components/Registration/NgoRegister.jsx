@@ -4,6 +4,7 @@ import {server} from '../../main'
 
 const NgoRegister = () => {
   const [formData, setFormData] = useState({
+    userType: "ngo",
     organizationName: "",
     email: "",
     password: "",
